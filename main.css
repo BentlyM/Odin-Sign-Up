@@ -1,3 +1,7 @@
+:root {
+    --dynamic-text-size: 2vw; 
+}
+
 body {
     padding: 0%;
     margin: 0%;
@@ -76,7 +80,7 @@ body {
 }
 
 .text-content {
-    font-size: 2rem;
+    font-size: var(--dynamic-text-size);
     font-weight: bold;
 }
 
@@ -94,9 +98,24 @@ form {
     border: none;
 }
 
-.prompt-warp {
+.prompt-wrap {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+#prompt-left , #prompt-right{
+    height: 100%;
+    border: 1px solid black;
+}
+
+#prompt-left {
+    flex: 1;
+}
+
+#prompt-right {
+    flex: 2;
 }
 
 .prompt-card {
@@ -105,7 +124,7 @@ form {
     font-weight: bold;
 }
 
-#sumbitBtn {
+#submitBtn {
     cursor: pointer;
     font-size: large;
     background-color: #596D48;
@@ -115,3 +134,24 @@ form {
     margin: 30px;
     padding: 10px 30px;
 }
+
+/* links */
+
+a{
+    text-decoration: none;
+    color: #596D48;
+}
+
+/* For screens smaller than 768px */
+@media only screen and (max-width: 768px) {
+    .text-content {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* For screens smaller than 480px */
+  @media only screen and (max-width: 480px) {
+    .text-content {
+      font-size: 1rem;
+    }
+  }
