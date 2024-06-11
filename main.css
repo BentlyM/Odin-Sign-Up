@@ -6,24 +6,31 @@ body {
 /* display containers */
 
 .main {
+    color: black;
     --content-container-width: 100vw;
     display: flex;
     height: 100vh;
     width: 100vw;
+    font-family: "Roboto", sans-serif;
 }
 
 .bg-img-container {
-    width: max(50vw, 360px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: calc(var(--content-container-width) - 50vw);
     height: 100vh;
     background: no-repeat url(./resources/halie-west-25xggax4bSA-unsplash.jpg);
     background-size: 100% 100%;
 }
 
 .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: var(--content-container-width);
     height: 100vh;
-    background-color: gray;
-    opacity: 0.3;
 }
 
 /* img container content */
@@ -42,12 +49,17 @@ body {
 }
 
 #img-1 {
-    max-height: 100px;
+    max-height: 100px; /* less responsive because of static value*/
 }
 
 #norse-text {
-    font-size: 5rem;
+    font-size: 5rem; 
     font-family: Norse, sans-serif;
+}
+
+#credit-text {
+    position: relative;
+    text-align: center;
 }
 
 @font-face {
@@ -55,14 +67,51 @@ body {
     src: url(/resources/Norse-Bold.otf);
 }
 
-/* */
+/* content container */
 
-@media only screen and (max-width: 360px){
-    .logo-container {
-        width: 100%;
-    }
-    
-    .content-container {
-        display: none;
-    }
+
+.text-wrap {
+    max-width: 50vw;
+    height: fit-content;
+}
+
+.text-content {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* form content */
+
+form {
+    width: 100%;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+}
+
+.prompt-warp {
+    display: flex;
+    flex-direction: column;
+}
+
+.prompt-card {
+    font-size: 1.4rem;
+    line-height: 1.2rem;
+    font-weight: bold;
+}
+
+#sumbitBtn {
+    cursor: pointer;
+    font-size: large;
+    background-color: #596D48;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 30px;
+    padding: 10px 30px;
 }
